@@ -1,0 +1,87 @@
+{
+  "airports": [
+    {
+      "airportName": "test",
+      "country": "testcsv",
+      "city": "lmlp",
+      "numOfClosets": 5555,
+      "id": 1
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 3,
+      "airportName": "Heathrow Airport",
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 4,
+      "airportName": "Gatwick Airport",
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 5,
+      "airportName": "Charles de Gaulle Airport",
+      "country": "France",
+      "city": "Paris"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 6,
+      "airportName": "Orly Airport",
+      "country": "France",
+      "city": "Paris"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 7,
+      "airportName": "Narita International Airport",
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 8,
+      "airportName": "Haneda Airport",
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    {
+      "numOfClosets": 5555,
+      "id": 9,
+      "airportName": "Osaka International Airport",
+      "country": "Japan",
+      "city": "Osaka"
+    }
+  ],
+  "countries": [
+    {
+      "id": "United States",
+      "cities": [
+        "New York"
+      ]
+    },
+    {
+      "id": "United Kingdom",
+      "cities": [
+        "London"
+      ]
+    },
+    {
+      "id": "France",
+      "cities": [
+        "Paris"
+      ]
+    },
+    {
+      "id": "Japan",
+      "cities": [
+        "Tokyo",
+        "Osaka"
+      ]
+    }
+  ]
+}

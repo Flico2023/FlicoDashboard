@@ -6,9 +6,6 @@ import { AirportForm } from "./components/AirportForm";
 
 
 export default function NewAirportPage() {
-  const [formValues, setFormValues] = useState();
-
-  const { id } = useParams();
 
   return (
     <Box sx={{ ...center, p: 2 }}>

@@ -30,7 +30,7 @@ export default function Airports() {
 
         <Typography mt={1}>You can see and edit airport by filters in this page</Typography>
 
-        <Grid container spacing={1}>
+        {/* <Grid container spacing={1}>
             <Grid item xs={12} lg={2} >
                 <AirportFilter />
             </Grid>
@@ -39,8 +39,9 @@ export default function Airports() {
                 <AirportTable/>
             </Grid>
             
+        </Grid> */}
 
-        </Grid>
+       <AirportTable/>
 
       </Box>
     </Box>

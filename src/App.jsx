@@ -34,6 +34,11 @@ import OrderDetailPage from "./pages/Orders/OrderDetailPage";
 import NewOrderPage from "./pages/Orders/NewOrderPage";
 import EditOrderPage from "./pages/Orders/EditOrderPage";
 import OrdersPage from "./pages/Orders/OrdersPage";
+import Warehouses from "./pages/Warehouses/Warehouses";
+import NewWarehousePage from "./pages/Warehouses/NewWarehousePage";
+import EditWarehousePage from "./pages/Warehouses/EditWarehousePage";
+import UserDetailsPage from "./pages/Users/UserDetailsPage";
+import NewUserPage from "./pages/Users/NewUserPage";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +60,9 @@ const router = createBrowserRouter([
       { path: "outproducts/new", element: <NewOutProductPage /> },
       { path: "outproducts/edit/:id", element: <EditOutProductPage /> },
       { path: "users", element: <UsersPage /> },
-      { path: "users/new", element: <EditUserPage /> },
-      { path: "users/edit/:id", element: <EditAirportPage /> },
+      { path: "users/new", element: <NewUserPage /> },
+      { path: "users/edit/:id", element: <EditUserPage /> },
+      { path: "users/:id", element: <UserDetailsPage /> },
       { path: "closets", element: <ClosetsPage /> },
       { path: "closets/new", element: <NewClosetPage /> },
       { path: "closets/edit/:id", element: <EditClosetPage /> },
@@ -68,6 +74,9 @@ const router = createBrowserRouter([
       { path: "orders/edit/:id", element: <EditOrderPage /> },
       { path: "orders/new", element: <NewOrderPage /> },
       { path: "orders/:id", element: <OrderDetailPage /> },
+      { path: "warehouses", element: <Warehouses /> },
+      { path: "warehouses/new", element: <NewWarehousePage /> },
+      { path: "warehouses/edit/:id", element: <EditWarehousePage /> },
     ],
   },
 ]);

@@ -1,60 +1,150 @@
 {
   "airports": [
     {
-      "airportName": "test",
-      "country": "testcsv",
-      "city": "lmlp",
-      "numOfClosets": 5555,
-      "id": 1
+      "airportID": 4,
+      "airportName": "Gatwick Airport"
     },
     {
-      "numOfClosets": 5555,
-      "id": 3,
-      "airportName": "Heathrow Airport",
-      "country": "United Kingdom",
-      "city": "London"
+      "airportID": 5,
+      "airportName": "Charles de Gaulle Airport"
     },
     {
-      "numOfClosets": 5555,
-      "id": 4,
-      "airportName": "Gatwick Airport",
-      "country": "United Kingdom",
-      "city": "London"
+      "airportID": 6,
+      "airportName": "Orly Airport"
     },
     {
-      "numOfClosets": 5555,
-      "id": 5,
+      "airportID": 7,
+      "airportName": "Narita International Airport"
+    },
+    {
+      "airportID": 8,
+      "airportName": "Haneda Airport"
+    },
+    {
+      "airportID": 9,
+      "airportName": "Osaka International Airport"
+    }
+  ],
+  "closets": [
+    {
+      "id":5,
+      "closetID": 5,
       "airportName": "Charles de Gaulle Airport",
-      "country": "France",
-      "city": "Paris"
+      "airportID": 5,
+      "closetNo": "C001",
+      "isEmpty": true,
+      "password": "12345",
+      "orderID": "79565"
     },
     {
-      "numOfClosets": 5555,
-      "id": 6,
+      "id":6,
+      "closetID": 6,
+      "airportName": "Gatwick Airport",
+      "airportID": 4,
+      "closetNo": "C002",
+      "isEmpty": false,
+      "password": "67890",
+      "orderID": "79566"
+    },
+    {
+      "id":7,
+      "closetID": 7,
       "airportName": "Orly Airport",
-      "country": "France",
-      "city": "Paris"
+      "airportID": 6,
+      "closetNo": "C003",
+      "isEmpty": true,
+      "password": "13579",
+      "orderID": "79567"
     },
     {
-      "numOfClosets": 5555,
-      "id": 7,
+      "id":8,
+      "closetID": 8,
       "airportName": "Narita International Airport",
-      "country": "Japan",
-      "city": "Tokyo"
+      "airportID": 7,
+      "closetNo": "C004",
+      "isEmpty": false,
+      "password": "24680",
+      "orderID": "79568"
     },
     {
-      "numOfClosets": 5555,
-      "id": 8,
+      "id":9,
+      "closetID": 9,
       "airportName": "Haneda Airport",
-      "country": "Japan",
-      "city": "Tokyo"
+      "airportID": 8,
+      "closetNo": "C005",
+      "isEmpty": true,
+      "password": "98765",
+      "orderID": "79569"
     },
     {
-      "numOfClosets": 5555,
-      "id": 9,
+      "id":10,
+      "closetID": 10,
       "airportName": "Osaka International Airport",
-      "country": "Japan",
-      "city": "Osaka"
+      "airportID": 9,
+      "closetNo": "C006",
+      "isEmpty": false,
+      "password": "54321",
+      "orderID": "79570"
+    },
+    {
+      "id":11,
+      "closetID": 11,
+      "airportName": "Charles de Gaulle Airport",
+      "airportID": 5,
+      "closetNo": "C007",
+      "isEmpty": false,
+      "password": "11111",
+      "orderID": "79571"
+    },
+    {
+      "id":12,
+      "closetID": 12,
+      "airportName": "Gatwick Airport",
+      "airportID": 4,
+      "closetNo": "C008",
+      "isEmpty": true,
+      "password": "22222",
+      "orderID": "79572"
+    },
+    {
+      "id":13,
+      "closetID": 13,
+      "airportName": "Orly Airport",
+      "airportID": 6,
+      "closetNo": "C009",
+      "isEmpty": false,
+      "password": "33333",
+      "orderID": "79573"
+    },
+    {
+      "id":14,
+      "closetID": 14,
+      "airportName": "Narita International Airport",
+      "airportID": 7,
+      "closetNo": "C010",
+      "isEmpty": true,
+      "password": "44444",
+      "orderID": "79574"
+    },
+    {
+      "id":15,
+      "closetID": 15,
+      "airportName": "Haneda Airport",
+      "airportID": 8,
+      "closetNo": "C011",
+      "isEmpty": false,
+      "password": "55555",
+      "orderID": "79575"
+    },
+    {
+      "id":16,
+      "closetID": 16,
+      "airportName": "Osaka International Airport",
+      "airportID": 9,
+      "closetNo": "C012",
+      "isEmpty": true,
+      "password": "66666",
+      "orderID": "79576"
     }
   ],
   "countries": [

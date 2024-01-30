@@ -1,3 +1,9 @@
+/**
+ * if obj has empty property, return true
+ * @param {object} obj - any object with any properties
+ * @returns {boolean}
+ */
+
 export function hasEmptyProperty(obj) {
     for (const key in obj) {
       if (obj[key] === "") {

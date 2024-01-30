@@ -3,7 +3,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { center, flexBetween, flexStart } from "../../utils/muiStyles";
 import { Link } from "react-router-dom";
 import AddCircleIcon from "@mui/icons-material/AddCircleOutline";
-import OutsourceFilter from './components/OutsourceFilter';
+import OutsourceTable from './components/OutsourceTable';
 
 export default function OutsourcesPage() {
     return (
@@ -30,12 +30,9 @@ export default function OutsourcesPage() {
             <Typography mt={1}>You can see and edit 3rd party sevices by filters in this page</Typography>
     
             <Grid container spacing={1}>
-                <Grid item xs={12} lg={2} >
-                    <OutsourceFilter/>
-                </Grid>
     
                 <Grid item xs={12} lg={10}>
-                    
+                    <OutsourceTable></OutsourceTable>
                 </Grid>
                 
     

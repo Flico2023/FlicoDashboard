@@ -1,3 +1,9 @@
+/**
+ * returns a new object with trimmed values
+ * @param {object} obj 
+ * @returns {object}
+ */
+
 export function trimObj(obj) {
     for (const key in obj) {
       if (typeof obj[key] === 'string') {
@@ -19,4 +25,6 @@ export function trimObj(obj) {
     }
     return obj;
   }
+
+
   

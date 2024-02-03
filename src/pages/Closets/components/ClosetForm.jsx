@@ -4,7 +4,6 @@ import {
   TextField,
   Stack,
   Button,
-  Grid,
   FormControl,
   InputLabel,
   Select,
@@ -20,9 +19,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { flexStart } from "../../../utils/muiStyles";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { closetDefault } from "../data/closetDefault";
 import { closetSchema } from "../data/closetSchema";
@@ -40,7 +37,7 @@ export default function ClosetForm() {
     queryFn: async () => {
       const response = await axios.get(
         //!FIXME: burası da değişecek
-        `http://localhost:5059/closets/${params.id}`
+        `http://localhost:5059/closet/api/${params.id}`
       );
       return response.data;
     },
@@ -58,7 +55,7 @@ export default function ClosetForm() {
       const parameter = params.id ? params.id : "";
       const method = params.id ? "PUT" : "POST";
       const response = await axios({
-        url: `http://localhost:5059/closets/${parameter}`,
+        url: `http://localhost:5059/api/closet/${parameter}`,
         method,
         data: body,
       });
@@ -66,7 +63,7 @@ export default function ClosetForm() {
     },
     onSuccess: () => {
       toast.success("Closet created successfully");
-      queryClient.invalidateQueries({ queryKey: ["airports"] });
+      queryClient.invalidateQueries({ queryKey: ["closets"] });
     },
 
     onError: (error) => {
@@ -94,8 +91,8 @@ export default function ClosetForm() {
     isLoading: airportIsLoading,
     error: airportError,
   } = useQuery(["airports"], async () => {
-    const response = await axios.get(`http://localhost:5059/airports`);
-    return response.data;
+    const response = await axios.get(`http://localhost:5059/api/airport`);
+    return response.data.data;
   });
 
   const clearForm = () => {

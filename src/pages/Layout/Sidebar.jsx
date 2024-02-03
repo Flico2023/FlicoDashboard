@@ -11,6 +11,7 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CheckroomOutlinedIcon from '@mui/icons-material/CheckroomOutlined';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { Box, ListItemIcon, MenuItem, MenuList, Stack, Typography } from "@mui/material";
 
 
@@ -49,6 +50,9 @@ export default function Sidebar() {
                 </SidebarItem>
                 <SidebarItem to="/orders" icon={<ShoppingBagIcon />}>
                     Orders
+                </SidebarItem>
+                <SidebarItem to="/faqs" icon={<QuestionMarkIcon />}>
+                    FAQS
                 </SidebarItem>
 
 

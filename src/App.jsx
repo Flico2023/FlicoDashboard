@@ -39,6 +39,9 @@ import NewWarehousePage from "./pages/Warehouses/NewWarehousePage";
 import EditWarehousePage from "./pages/Warehouses/EditWarehousePage";
 import UserDetailsPage from "./pages/Users/UserDetailsPage";
 import NewUserPage from "./pages/Users/NewUserPage";
+import FaqsPage from "./pages/Faqs/AllFaqsPage";
+import NewFaqPage from "./pages/Faqs/NewFaqPage";
+import EditFaqsPage from "./pages/Faqs/EditFaqsPage";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +80,10 @@ const router = createBrowserRouter([
       { path: "warehouses", element: <Warehouses /> },
       { path: "warehouses/new", element: <NewWarehousePage /> },
       { path: "warehouses/edit/:id", element: <EditWarehousePage /> },
+
+      { path: "faqs", element: <FaqsPage /> },
+      { path: "faqs/new", element: <NewFaqPage /> },
+      { path: "faqs/edit/:id", element: <EditFaqsPage /> },
     ],
   },
 ]);

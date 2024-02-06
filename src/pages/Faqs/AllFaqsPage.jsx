@@ -36,7 +36,7 @@ export default function FaqsPage() {
             </Button>
           </Link>
         </Box>
-
+BUARSI CONTACT US OLCAK
         <Typography mt={1}>
           You can see and edit FAQS in this page
         </Typography>

@@ -42,6 +42,8 @@ import NewUserPage from "./pages/Users/NewUserPage";
 import FaqsPage from "./pages/Faqs/AllFaqsPage";
 import NewFaqPage from "./pages/Faqs/NewFaqPage";
 import EditFaqsPage from "./pages/Faqs/EditFaqsPage";
+import AllContactUsPage from "./pages/ContactUs/AllContactUs";
+import EditContactUs from "./pages/ContactUs/EditContactUs";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +86,9 @@ const router = createBrowserRouter([
       { path: "faqs", element: <FaqsPage /> },
       { path: "faqs/new", element: <NewFaqPage /> },
       { path: "faqs/edit/:id", element: <EditFaqsPage /> },
+
+      { path: "contactus", element: <AllContactUsPage /> },
+      { path: "contactus/edit/:id", element: <EditContactUs /> },
     ],
   },
 ]);

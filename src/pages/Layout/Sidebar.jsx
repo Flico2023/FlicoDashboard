@@ -13,6 +13,7 @@ import CheckroomOutlinedIcon from '@mui/icons-material/CheckroomOutlined';
 import WarehouseIcon from '@mui/icons-material/Warehouse';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import MessageIcon from '@mui/icons-material/Message';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Box, ListItemIcon, MenuItem, MenuList, Stack, Typography } from "@mui/material";
 
 
@@ -42,6 +43,9 @@ export default function Sidebar() {
                 </SidebarItem>
                 <SidebarItem to="/users" icon={<PersonIcon />}>
                     Users
+                </SidebarItem>
+                <SidebarItem to="/carts" icon={<ShoppingCartIcon />}>
+                    Carts
                 </SidebarItem>
                 <SidebarItem to="/closets" icon={<AccountBalanceWalletIcon />}>
                     Closets

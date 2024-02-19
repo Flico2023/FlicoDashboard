@@ -44,6 +44,9 @@ import NewFaqPage from "./pages/Faqs/NewFaqPage";
 import EditFaqsPage from "./pages/Faqs/EditFaqsPage";
 import AllContactUsPage from "./pages/ContactUs/AllContactUs";
 import EditContactUs from "./pages/ContactUs/EditContactUs";
+import AllCarts from "./pages/Carts/AllCarts";
+import AddCart from "./pages/Carts/AddCart";
+import EditCart from "./pages/Carts/EditCart";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +92,10 @@ const router = createBrowserRouter([
 
       { path: "contactus", element: <AllContactUsPage /> },
       { path: "contactus/edit/:id", element: <EditContactUs /> },
+
+      { path: "carts", element: <AllCarts /> },
+      { path: "carts/new", element: <AddCart /> },
+      { path: "carts/edit/:id", element: <EditCart /> },
     ],
   },
 ]);

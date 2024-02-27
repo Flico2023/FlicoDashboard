@@ -96,6 +96,7 @@ export default function ClosetForm() {
     setValue("size", cart.size);
     setValue("amount", cart.amount);
     setValue("userID", cart.userID);
+    setValue("status", cart.status);
   };
 
   const onReset = () => {
@@ -163,6 +164,31 @@ export default function ClosetForm() {
                   ))}
                 </Select>
                 <FormHelperText>{errors.size?.message}</FormHelperText>
+              </FormControl>
+            )}
+          />
+
+<Controller
+            name="status"
+            control={control}
+            render={({ field }) => (
+              <FormControl
+                fullWidth
+                error={!!errors.status}
+                helperText={errors.status?.message}
+              >
+                <InputLabel>Status</InputLabel>
+                <Select label="Status" fullWidth {...field}>
+
+                    <MenuItem value={"Checkout"}>
+                      Checkout
+                    </MenuItem>
+                    <MenuItem value={"Cart"}>
+                    Cart
+                    </MenuItem>
+               
+                </Select>
+                <FormHelperText>{errors.status?.message}</FormHelperText>
               </FormControl>
             )}
           />

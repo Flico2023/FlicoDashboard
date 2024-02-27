@@ -2,5 +2,6 @@ export const cartDefault = {
     productID: "",
     size: "",
     amount: "",
-    userID: ""
+    userID: "",
+    status: "Checkout",
 }

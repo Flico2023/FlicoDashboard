@@ -157,6 +157,9 @@ export default function CartsTable() {
                   <b>Id</b>
                 </TableCell>
                 <TableCell align="left">
+                  <b>Status</b>
+                </TableCell>
+                <TableCell align="left">
                   <b>User</b>
                 </TableCell>
                 <TableCell align="left">
@@ -193,6 +196,7 @@ export default function CartsTable() {
                     </Link>
                   </TableCell>
                   <TableCell align="left">{cart.cartID}</TableCell>
+                  <TableCell align="left">{cart.status}</TableCell>
                   <TableCell align="left">
                     <Typography>
                       {" "}

@@ -47,6 +47,7 @@ import EditContactUs from "./pages/ContactUs/EditContactUs";
 import AllCarts from "./pages/Carts/AllCarts";
 import AddCart from "./pages/Carts/AddCart";
 import EditCart from "./pages/Carts/EditCart";
+import { LoginForm } from "./pages/Login/LoginForm";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
       { path: "carts/edit/:id", element: <EditCart /> },
     ],
   },
+  {
+    path: "/login",
+    element: <LoginForm></LoginForm>
+  }
 ]);
 
 const queryClient = new QueryClient();

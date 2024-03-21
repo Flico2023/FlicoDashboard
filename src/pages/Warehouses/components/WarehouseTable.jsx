@@ -49,6 +49,7 @@ export default function WarehouseTable() {
     }
   );
 
+  //!Product içinde bunu bidaha kullandık custom hok yazıcaz
   const {
     data: warehouses,
     isLoading: warehouseIsLoading,

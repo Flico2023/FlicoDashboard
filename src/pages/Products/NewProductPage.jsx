@@ -5,14 +5,12 @@ import {
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { center } from "../../utils/muiStyles";
-import { ProductForm } from "./components/ProductForm";
-import StockDetailForm from "./components/StockDetailForm";
+import ProductForm from "./components/ProductForm";
 
 
-export default function NewAirportPage() {
 
+export default function NewProductPage() {
 
-  const { id } = useParams();
 
   return (
     <Box sx={{ ...center, p: 2 }}>
@@ -31,7 +29,7 @@ export default function NewAirportPage() {
         </Typography>
         <Box sx={{  width: "100%" }}>
           <ProductForm/>
-          <StockDetailForm/>
+
         </Box>
       </Box>
     </Box>

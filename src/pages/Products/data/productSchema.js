@@ -1,25 +1,23 @@
 import * as yup from 'yup';
 
 export const productSchema = yup.object().shape({
-  image: yup
-    .string().required('Bir dosya seçmelisiniz.')
-    /*.test('fileSize', 'Dosya boyutu 3 MB\'dan küçük olmalıdır.', (value) => {
-      return value && value[0].size <= 3000000;
-    })*/
-    /*.test('fileType', 'Dosya türü bir .png .jpg veya .jpeg. olmalıdır', (value) => {
-      return value && ['image/jpeg', 'image/png', 'image/jpg'].includes(value[0].type);
-    })*/,
-  brand: yup.string().required('Brand alanı zorunludur.'),
-  productName: yup.string().required('Name alanı zorunludur.'),
-  category: yup.string().required('Category alanı zorunludur.'),
-  subcategory: yup.string().required('Subcategory alanı zorunludur.'),
-  color: yup.string().required('Color alanı zorunludur.'),
-  price: yup
-    .number()
-    .typeError("Price alanı bir sayı olarak girilmelidir")
-    .positive('Price pozitif bir sayı olmalıdır.')
-    .required('Price alanı zorunludur.'),
-    productDetail: yup.string().required('Details alanı zorunludur.'),
-  gender: yup.string().required('Gender alanı zorunludur.'),
-
+    product: yup.object().shape({
+        ProductName: yup.string().required('Product name is required.'),
+        Category: yup.string().required('Category is required.'),
+        Subcategory: yup.string().required('Subcategory is required.'),
+        Brand: yup.string().required('Brand is required.'),
+        Price: yup.number().positive().required('Price must be a positive number.'),
+        ProductDetail: yup.string().required('Product detail is required.'),
+        Color: yup.string().required('Color is required.'),
+        ImagePath: yup.string().url().required('Image path must be a valid URL.'),
+    }),
+    stockDetails: yup.array().of(
+        yup.object().shape({
+            size: yup.string().required('Size is required.'),
+            variationAmount: yup.number().positive().required('Variation amount must be a positive number.'),
+            variationActiveAmount: yup.number().positive().required('Variation active amount must be a positive number.'),
+            warehouseID: yup.number().positive().required('Warehouse ID must be a positive number.'),
+        })
+    ),
 });
+

@@ -7,11 +7,14 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useLogin } from "../../../context/LoginContect";
 
 
 export function AirportForm() {
   const queryClient = useQueryClient();
   const params = useParams();
+
+  const {token} = useLogin();
 
   const {
     data: airport,
@@ -21,7 +24,12 @@ export function AirportForm() {
     queryKey: ["airport", params.id],
     queryFn: async () => {
       const response = await axios.get(
-        `http://localhost:5059/api/airport/${params.id}`
+        `http://localhost:5059/api/airport${"/"+params.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       console.log(response.data.data);
       return response.data.data;
@@ -55,9 +63,12 @@ export function AirportForm() {
       const parameter = params.id ? params.id : "";
       const method = params.id ? "PUT" : "POST";
       const response = await axios({
-        url: `http://localhost:5059/api/airport/${parameter}`,
+        url: `http://localhost:5059/api/airport${"/"+parameter}`,
         method,
         data: { ...body },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
       return response.data;
     },

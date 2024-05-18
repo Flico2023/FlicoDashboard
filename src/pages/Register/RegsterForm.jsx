@@ -9,74 +9,41 @@ import {
   Typography,
   Alert,
 } from "@mui/material";
-import { loginSchema, loginDefault } from "./formDefaults";
-import { Link, useNavigate } from "react-router-dom";
+import { registerDefault, registerSchema } from "./registerFormDefaults";
+import { useMutation } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../context/LoginContect";
 
-export function LoginForm() {
+export function RegisterForm() {
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+
+  const {setToken} = useLogin();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(loginSchema),
-    defaultValues: loginDefault,
+    resolver: yupResolver(registerSchema),
+    defaultValues: registerDefault,
   });
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const navigate = useNavigate();
-
-  const { setToken, setUserId, setExpireTime } = useLogin();
-
-  const loginHandler = (tokenStr) => {
-    const token = tokenStr;
-    const decodedPayload = jwtDecode(token);
-
-    const role =
-      decodedPayload[
-        "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
-      ];
-    if (role !== "Admin") {
-      setErrorMessage("You are not admin");
-      return;
-    }
-
-    localStorage.setItem("jwtToken", token);
-
-    const expireTime = new Date(
-      decodedPayload.exp * 1000
-    );
-    setExpireTime(expireTime);
-    console.log("expire time in login" + expireTime);
-    localStorage.setItem("expireTime", expireTime.toISOString());
-
-    const decodeUserId =
-      decodedPayload[
-        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
-      ];
-    setUserId(decodeUserId);
-    localStorage.setItem("userId", decodeUserId);
-
-    setToken(token);
-  };
 
   const onSubmit = async (data) => {
     try {
-      setErrorMessage("");
+        setErrorMessage("");
       const response = await axios.post(
-        "http://localhost:5059/api/user/SignIn",
+        "http://localhost:5059/api/user/SignUp",
         data
       );
-      console.log(response);
 
-      const token = response.data.token;
-      loginHandler(token);
-
+      setToken(response.data.token);
       navigate("/products");
+
     } catch (error) {
-      console.log(error);
       setErrorMessage("An error occurred while registering.");
     }
   };
@@ -95,7 +62,7 @@ export function LoginForm() {
           Flico
         </Typography>
         <Typography component="h1" variant="h5">
-          Login
+          Register
         </Typography>
         <Box
           component="form"
@@ -107,10 +74,30 @@ export function LoginForm() {
             margin="normal"
             required
             fullWidth
+            label="Name"
+            {...register("name")}
+            error={!!errors.name}
+            helperText={errors.name?.message}
+            variant="outlined"
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Surname"
+            {...register("surname")}
+            error={!!errors.surname}
+            helperText={errors.surname?.message}
+            variant="outlined"
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
             label="Email"
-            {...register("mail")}
-            error={!!errors.mail}
-            helperText={errors.mail?.message}
+            {...register("email")}
+            error={!!errors.email}
+            helperText={errors.email?.message}
             variant="outlined"
           />
           <TextField
@@ -124,18 +111,30 @@ export function LoginForm() {
             helperText={errors.password?.message}
             variant="outlined"
           />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            label="Phone"
+            {...register("phone")}
+            error={!!errors.phone}
+            helperText={errors.phone?.message}
+            variant="outlined"
+          />
+
           {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
+
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Login
+            Register
           </Button>
           <Box sx={{ mt: 0 }}>
             <Typography>
-              Do not have an account? <Link to="/register">Register</Link>
+              Already have an account? <Link to="/login">Login</Link>
             </Typography>
           </Box>
         </Box>

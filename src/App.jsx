@@ -48,11 +48,14 @@ import AllCarts from "./pages/Carts/AllCarts";
 import AddCart from "./pages/Carts/AddCart";
 import EditCart from "./pages/Carts/EditCart";
 import { LoginForm } from "./pages/Login/LoginForm";
+import { RegisterForm } from "./pages/Register/RegsterForm";
+import SecureRoute from "./coreComponents/SecureRoute";
+import { LoginProvider } from "./context/LoginContect";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout></Layout>,
+    element: <SecureRoute><Layout></Layout></SecureRoute>,
     errorElement: <div>ERROR PAGE</div>,
     children: [
       { index: true, element: <Navigate to="airports" /> },
@@ -102,6 +105,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginForm></LoginForm>
+  },
+  {
+    path: "/register",
+    element: <RegisterForm></RegisterForm>
   }
 ]);
 
@@ -109,11 +116,12 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
+    <><LoginProvider>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <ToastContainer />
       </QueryClientProvider>
+      </LoginProvider>
     </>
   );
 }

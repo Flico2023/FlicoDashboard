@@ -8,6 +8,7 @@ import ProductTable from "./components/ProductTable";
 import ProductFilterProvider from "./context/ProductFilterContext";
 
 export default function ProductsPage() {
+  console.log("ProductsPage Çalıştı")
   return (
     <ProductFilterProvider>
       <Box sx={{ ...center, p: 2 }}>

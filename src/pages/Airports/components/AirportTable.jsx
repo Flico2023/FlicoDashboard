@@ -21,10 +21,13 @@ import { toast } from "react-toastify";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useLogin } from "../../../context/LoginContect";
 
 export default function AirportTable() {
   const { filter } = useAirportFilter();
   const queryClient = useQueryClient();
+
+  const { token } = useLogin();
 
   //#region React query
   const {
@@ -55,7 +58,14 @@ export default function AirportTable() {
     isLoading: airportIsLoading,
     error: airportError,
   } = useQuery(["airports"], async () => {
-    const response = await axios.get(`http://localhost:5059/api/airport`);
+    console.log("token", token)
+    const response = await axios.get(`http://localhost:5059/api/airport`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+    );
 
     return response.data.data;
   });

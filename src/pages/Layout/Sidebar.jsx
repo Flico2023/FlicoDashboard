@@ -29,18 +29,18 @@ export default function Sidebar() {
                 <SidebarItem to="/warehouses" icon={<WarehouseIcon />}>
                     Warehouses
                 </SidebarItem>
-                <SidebarItem to="/flicostuff" icon={<EngineeringIcon />}>
+                {/* <SidebarItem to="/flicostuff" icon={<EngineeringIcon />}>
                     Flico Stuff
-                </SidebarItem>
+                </SidebarItem> */}
                 <SidebarItem to="/products" icon={<CheckroomOutlinedIcon />}>
                     Products
                 </SidebarItem>
                 <SidebarItem to="/outsources" icon={<LocalLaundryServiceIcon />}>
                     Outsources
                 </SidebarItem>
-                <SidebarItem to="/outproducts" icon={<AirportShuttleIcon />}>
+                {/* <SidebarItem to="/outproducts" icon={<AirportShuttleIcon />}>
                     Out Products
-                </SidebarItem>
+                </SidebarItem> */}
                 <SidebarItem to="/users" icon={<PersonIcon />}>
                     Users
                 </SidebarItem>
@@ -50,9 +50,9 @@ export default function Sidebar() {
                 <SidebarItem to="/closets" icon={<AccountBalanceWalletIcon />}>
                     Closets
                 </SidebarItem>
-                <SidebarItem to="/campaigns" icon={<CampaignIcon />}>
+                {/* <SidebarItem to="/campaigns" icon={<CampaignIcon />}>
                     Campaigns
-                </SidebarItem>
+                </SidebarItem> */}
                 <SidebarItem to="/orders" icon={<ShoppingBagIcon />}>
                     Orders
                 </SidebarItem>
@@ -63,8 +63,8 @@ export default function Sidebar() {
                     Contact Us Messages
                 </SidebarItem>
 
-
-                <Typography>buraya satışlar ve analitikler hakkında bi şeyler de eklemek lazım. Toplam gelir gider filan</Typography>
+{/* 
+                <Typography>buraya satışlar ve analitikler hakkında bi şeyler de eklemek lazım. Toplam gelir gider filan</Typography> */}
                 </Stack>
             </MenuList>
         </Box>

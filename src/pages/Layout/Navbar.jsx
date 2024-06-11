@@ -12,7 +12,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -20,11 +20,11 @@ export default function Navbar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             FLICO
           </Typography>
-          <Button color="inherit">Log out</Button>
+          {/* <Button color="inherit">Log out</Button> */}
         </Toolbar>
       </AppBar>
     </Box>

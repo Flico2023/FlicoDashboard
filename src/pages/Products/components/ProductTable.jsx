@@ -91,7 +91,7 @@ export default function ProductTable() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5">Carts</Typography>
+        <Typography variant="h5">Products</Typography>
 
         {results && results.totalCount && (
           <Typography variant="h6">{results.totalCount} results</Typography>
@@ -199,7 +199,6 @@ export default function ProductTable() {
                   <TableCell align="left">{product.price}</TableCell>
                   <TableCell align="left">{product.color}</TableCell>
                   <TableCell align="left">{product.stockDetails.map(sd=>sd.size).join(" - ")}</TableCell>
-
 
                 </TableRow>
               ))}

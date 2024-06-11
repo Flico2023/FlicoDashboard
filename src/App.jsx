@@ -30,9 +30,9 @@ import ProductsPage from "./pages/Products/ProductsPage";
 import EditProductPage from "./pages/Products/EditProductPage";
 import NewProductPage from "./pages/Products/NewProductPage";
 import ProductDetailPage from "./pages/Products/ProductDetailPage";
-import OrderDetailPage from "./pages/Orders/OrderDetailPage";
+/*import OrderDetailPage from "./pages/Orders/OrderDetailPage";
 import NewOrderPage from "./pages/Orders/NewOrderPage";
-import EditOrderPage from "./pages/Orders/EditOrderPage";
+import EditOrderPage from "./pages/Orders/EditOrderPage";*/
 import OrdersPage from "./pages/Orders/OrdersPage";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import NewWarehousePage from "./pages/Warehouses/NewWarehousePage";
@@ -83,9 +83,9 @@ const router = createBrowserRouter([
       { path: "products/new", element: <NewProductPage /> },
       { path: "products/:id", element: <ProductDetailPage /> },
       { path: "orders", element: <OrdersPage /> },
-      { path: "orders/edit/:id", element: <EditOrderPage /> },
+     /* { path: "orders/edit/:id", element: <EditOrderPage /> },
       { path: "orders/new", element: <NewOrderPage /> },
-      { path: "orders/:id", element: <OrderDetailPage /> },
+      { path: "orders/:id", element: <OrderDetailPage /> },*/
       { path: "warehouses", element: <Warehouses /> },
       { path: "warehouses/new", element: <NewWarehousePage /> },
       { path: "warehouses/edit/:id", element: <EditWarehousePage /> },
